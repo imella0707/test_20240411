@@ -40,7 +40,7 @@
 
 ---
 
-- **Environment**: ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white), ![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white), ![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
+- **Environment**: ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white) ![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
 - **Development**: Python  
 - **Communication**: Slack, Notion  
 
