@@ -1,7 +1,12 @@
 # Nextloop Data Pipeline
 
 ---
+## 프로젝트 정보 
 
+- **프로젝트 명**: 2024 이어드림스쿨 4기 두왓 기업연계 프로젝트  
+- **개발기간**: 2024.10.15. ~ 2024.11.22.
+---
+  
 ## NextLoop팀 소개 
 
 ![image](https://github.com/user-attachments/assets/734f6e3c-0487-4727-9635-38d13c266c37)
@@ -25,14 +30,6 @@
 
 
 ---
-
-## 프로젝트 정보 
-
-- **프로젝트 명**: 2024 이어드림스쿨 4기 두왓 기업연계 프로젝트  
-- **개발기간**: 2024.10.15. ~ 2024.11.22.  
-
----
-
 ## Stacks
 
 - **Environment**: ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white) ![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
