@@ -4,8 +4,7 @@
 
 ## 팀 소개 
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/ea08be67-41d6-49a7-bb68-b3ddc6421ad8/780f41d9-aff3-452c-af23-76f84bfacdf3/image.png)
-
+[image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/ea08be67-41d6-49a7-bb68-b3ddc6421ad8/780f41d9-aff3-452c-af23-76f84bfacdf3/image.png)
 **NextLoop**라는 이름은 반복적으로 성장하고 발전하는 개발 팀을 상징하는 의미로 지었습니다. 
 
 ### 팀 이름의 의미
