@@ -40,6 +40,15 @@
 
 ---
 
+![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white)
+![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
+
+- **Environment**: Visual Studio Code, git, GitHub  
+- **Development**: Python  
+- **Communication**: Slack, Notion  
+
+
 ## 주요 기능 
 
 1. **데이터 파이프라인 설계**
