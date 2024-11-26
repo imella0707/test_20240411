@@ -34,15 +34,13 @@
 
 ## Stacks
 
-- **Environment**: Visual Studio Code, git, GitHub  
-- **Development**: Python  
-- **Communication**: Slack, Notion  
+- **Environment**: ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white) ![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
+- **Development**: ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)  
+- **Communication**: ![Slack](https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-000000?logo=notion&logoColor=white)
+ 
 
 ---
 
-- **Environment**: ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white) ![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
-- **Development**: Python  
-- **Communication**: Slack, Notion  
 
 
 ## 주요 기능 
