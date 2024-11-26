@@ -7,7 +7,7 @@
 ![image](https://github.com/user-attachments/assets/734f6e3c-0487-4727-9635-38d13c266c37)
 
 
-**NextLoop**: 반복적으로 성장하고 발전하는 개발 팀을 상징
+**NextLoop**: 반복적으로 성장하고 발전하는 개발 팀을 상징합니다. 
 
 ### 팀 이름의 의미
 1. **끊임없는 발전**  
