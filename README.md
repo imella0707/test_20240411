@@ -85,40 +85,41 @@
 ![image](https://github.com/user-attachments/assets/3dbbe9fb-90c4-4033-ab9b-769772fb8c1a)
 
 
+
 - **파이프라인 상세 구조** 
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
-# 데이터 파이프라인 구조
 
+
+
+
+.
 데이터 파이프라인은 4개의 주요 계층으로 구성되어 있습니다:
 
-## 1. Storage Layer (입력 저장소 계층)
-### 데이터 소스:
+### 1. Storage Layer (입력 저장소 계층)
+#### 데이터 소스:
 - CSV 파일 업로드를 통해 데이터를 입력받음.
 - GCS(Google Cloud Storage)에서 직접 데이터를 저장하거나 가져오는 것도 가능.
 
-### 역할:
+#### 역할:
 - 원시 데이터를 **Cloud Storage Bucket**에 저장.
 
----
 
-## 2. Processing Layer (데이터 처리 계층)
-- **Apache Spark 클러스터**를 사용하여 데이터 처리 수행.
 
-### 3단계 데이터 처리:
-1. **데이터 검증 (Data Validation)**:
+### 2. Processing Layer (데이터 처리 계층)
+- **Apache Spark**를 사용하여 3단계 데이터 처리 수행.
+
+#### 3단계 데이터 처리:
+1) **데이터 검증 (Data Validation)**:
    - 데이터를 검증하고 품질을 확인.
-2. **변환 (Transformation)**:
-   - 도메인에 기반한 피처 생성 및 데이터 전처리.
-3. **포맷 변환 (Format Convert)**:
+2) **변환 (Transformation)**:
+   - 호텔 도메인에 기반한 feature 생성 및 데이터 전처리.
+3) **포맷 변환 (Format Convert)**:
    - 데이터를 효율적으로 저장 및 활용할 수 있도록 **Parquet 포맷**으로 변환.
 
----
 
 ## 3. Storage Layer (출력 저장소 계층)
-- 최종 처리된 데이터를 **Feature Store**에 저장.
-- Feature Store는 데이터의 재사용성을 높이고 데이터 사이언스 작업을 위한 최적의 저장소로 사용.
-
----
+- 최종 처리된 데이터를 feature store인 **Cloud Storage Bucket**에 저장.
+- Feature Store인 feast를 사용하지 않은 이유는 인프라 구축 초기단계이기 때문에 최대한 간소화하기로 결정.  
 
 ## 4. Consumption Layer (소비 계층)
 - 최종 데이터는 **데이터 사이언티스트**들이 Feature Store에서 데이터를 가져와 분석 및 모델 학습 등에 활용.
