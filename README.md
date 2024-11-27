@@ -104,11 +104,11 @@
 
 #### 2. Processing Layer (데이터 처리 계층)
 - **Apache Spark**를 사용하여 3단계 데이터 처리 수행.
-  **1)데이터 검증 (Data Validation)**:
+  - **데이터 검증 (Data Validation)**:
    - 데이터를 검증하고 품질을 확인.
-  **2)변환 (Transformation)**:
+  - **변환 (Transformation)**:
    - 호텔 도메인에 기반한 feature 생성 및 데이터 전처리.
-  **3)포맷 변환 (Format Convert)**:
+  - **포맷 변환 (Format Convert)**:
    - 데이터를 효율적으로 저장 및 활용할 수 있도록 **Parquet 포맷**으로 변환.
 
 
