@@ -48,13 +48,14 @@
    - 제공받은 Dowhat 데이터를 GCS에 적재
    - 주 단위로 Airflow 배치 태스크를 통해 데이터를 인입하는 데이터 파이프라인 구현
 
-- **MLOps lever1 파이프라인 구축**
+- **MLOps level1 파이프라인 구축**
    - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습
-   - FastAPI를 활용해 모델 서빙 구현
+   - mlflow를 통해 모델 실험 관리(Tracking), 모델 레지스트리 기능 사용
+   - FastAPI를 통해 모델 서빙 구현
  
 - **모니터링 시스템 구축**
    - Prometheus, Grafana를 통해 시스템 성능 모니터링 및 slack 알람
-   - cAdvisor, prometheus Fastapi instrumentator 사용해 메트릭 정보 수집
+   - cAdvisor, prometheus Fastapi instrumentator를 통해 메트릭 정보 수집
      
 
 ---
@@ -66,10 +67,10 @@
   - Instance Type :  E2.standard-4 (vcpu 4, ram 16gb)
   - Storage : 최소 100GB (균형 있는 영구 디스크)
 
-- GCP 인스턴스 생성 규칙
+- 기타 주의사항
   - 각 인스턴스 하나에 하나의 서비스 만을 띄워야 함. 
     다만 **Prometheus, Grafana**같이 부하가 별로 없는 서비스의 경우 같은 인스턴스에 배포하여도 상관없음.
-  - 인스턴스 이름은 **dowhat-{platform}-{number}** 로 생성.
+  - 인스턴스 이름은 **dowhat-{platform}-{number}** 
     ex) dowhat-monitoring-1   
 
 
