@@ -3,7 +3,7 @@
 ---
 ## 🏨 프로젝트 정보 
 
-- **프로젝트 명**:Dowhat 호텔 CRM 파이프라인 구축 
+- **프로젝트 명**: Dowhat 호텔 CRM 파이프라인 구축 
 - **소속 기관**: 2024 이어드림스쿨 4기  
 - **개발 기간**: 2024.10.15. ~ 2024.11.22.
 ---
@@ -23,13 +23,13 @@
 
 ---
 
-## 📊 Repository 방문 횟수 
+## 🔔 Repository 방문 횟수 
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fimella0707%2Ftest_20240411&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 
 ---
-## Stacks
+## 🛠 Stacks
 
 - **Environment**: ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-blue?logo=visual-studio-code&logoColor=white) ![Git](https://img.shields.io/badge/Git-orange?logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)
 - **Development**: ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white) ![Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?logo=apache-airflow&logoColor=white) ![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?logo=apache-spark&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white) ![MLflow](https://img.shields.io/badge/MLflow-0194E2?logo=mlflow&logoColor=white) ![Nginx](https://img.shields.io/badge/Nginx-009639?logo=nginx&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
@@ -46,7 +46,7 @@
 - **데이터 파이프라인 구축**
    - 제공받은 Dowhat 데이터를 GCS에 적재
    - 주 단위로 Airflow 배치 태스크를 통해 데이터를 인입하는 데이터 파이프라인 구현
-   - 현재는 로컬에서 Spark를 사용, 추후 데이터 규모가 많아질 경우를 대비해서 Spark cluster 구축해 놓았음.
+   - 현재는 로컬에서 Spark를 사용, 추후 데이터 규모가 많아질 경우를 대비해서 Spark cluster 구축해 둠
 
 - **MLOps level 1 파이프라인 구축**
    - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습
@@ -79,7 +79,7 @@
 ---
 
 
-## 아키텍처
+## 🖊 아키텍처
 - 1.
 ![dowhat-pileline drawio](https://github.com/user-attachments/assets/51e2365e-6fff-4f42-91b8-5bd35ccd61a1)
 
