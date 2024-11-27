@@ -149,7 +149,7 @@
 
 #### 4. CI/CD: GitHub Actions와 NGINX를 활용한 무중단 배포
 - Github action
-  - 새로운 모델 베포 이후 Backend 서버(FastAPI)의 코드 변경을 감지 → backend/** 디렉터리에서 변경이 발생하면 detect-changes 작업에서 확인 가능
+  - 새로운 모델 배포 이후 Backend 서버(FastAPI)에서 변경된 내역 확인(backend/** 디렉터리에서 변경이 발생하면 detect-changes 작업에서 확인 가능)
   - 업데이트 된 코드를 바탕으로
     - Blue-Green 배포 스크립트(switch-blue-green.sh)를 실행.
     - 변경 사항을 Green 컨테이너에 반영. 
