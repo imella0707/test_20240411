@@ -80,14 +80,14 @@
 
 
 ## 🖊 아키텍처
-- 1.
+- 전체 아키텍처 
 ![dowhat-pileline drawio](https://github.com/user-attachments/assets/51e2365e-6fff-4f42-91b8-5bd35ccd61a1)
 
 
-- 2.
+- 파이프라인 상세 구조 
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
 
-- 3.
+- mlops 파이프라인 상세 구조 
 ![image](https://github.com/user-attachments/assets/15ea07f8-c0c0-4b92-95b2-355b674bc189)
 
 ---
