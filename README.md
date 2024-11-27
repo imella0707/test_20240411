@@ -117,7 +117,7 @@
   - 최종 데이터는 **데이터 사이언티스트**들이 Feature Store에서 데이터를 가져와 분석 및 모델 학습 등에 활용.
 
 
-- **mlops 파이프라인 상세 구조** 
+### **Mlops파이프라인 상세 구조**
 ![image](https://github.com/user-attachments/assets/15ea07f8-c0c0-4b92-95b2-355b674bc189)
 
 ---
