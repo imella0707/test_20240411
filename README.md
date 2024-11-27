@@ -51,7 +51,7 @@
    - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습
    - mlflow를 통해 모델 실험 관리(Tracking), 모델 레지스트리 기능 사용
    - FastAPI를 통해 모델 서빙 구현
-   - CI/CD를 위해 github action, Nginx의 Blue-Green 무중단 배포 방식 사용
+   - Github action, Nginx를 활용한 Blue-Green 무중단 배포 방식을 통해 CI/CD 구현
  
 - **모니터링 시스템 구축**
    - Prometheus, Grafana를 통해 시스템 성능 모니터링 및 slack 알람 연동
