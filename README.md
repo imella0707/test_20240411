@@ -14,7 +14,7 @@
 
 ### 팀 이름의 의미
 - **끊임없는 발전**  
-   - 'Next'는 항상 다음 단계로 나아가는 것을 뜻함, 개발 팀이 계속해서 더 나은 솔루션과 기술을 탐구하고 도전한다는 의미를 담고 있음
+   - 'Next'는 항상 다음 단계로 나아가는 것을 뜻함, 이는 계속해서 더 나은 솔루션과 기술을 탐구하고 도전한다는 의미를 담고 있음
      
 - **순환적 개선**  
    - 'Loop'는 프로그래밍에서 반복을 뜻함, 이는 코드나 제품을 지속적으로 개선하고 최적화하는 개발 과정을 상징함.
@@ -47,14 +47,16 @@
 - **데이터 파이프라인 구축**
    - 제공받은 Dowhat 데이터를 GCS에 적재
    - 주 단위로 Airflow 배치 태스크를 통해 데이터를 인입하는 데이터 파이프라인 구현
+   - 현재는 로컬에서 Spark를 사용, 추후 데이터 규모가 많아질 경우를 대비해서 Spark cluster 구축해 놓았음.
 
-- **MLOps level1 파이프라인 구축**
+- **MLOps level 1 파이프라인 구축**
    - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습
    - mlflow를 통해 모델 실험 관리(Tracking), 모델 레지스트리 기능 사용
    - FastAPI를 통해 모델 서빙 구현
+   - CI/CD를 위해 github action, Nginx의 Blue-Green 무중단 배포방식 사용
  
 - **모니터링 시스템 구축**
-   - Prometheus, Grafana를 통해 시스템 성능 모니터링 및 slack 알람
+   - Prometheus, Grafana를 통해 시스템 성능 모니터링 및 slack 알람 연동
    - cAdvisor, prometheus Fastapi instrumentator를 통해 메트릭 정보 수집
      
 
@@ -79,17 +81,14 @@
 
 
 ## 아키텍처
-
-
+- 1.
 ![dowhat-pileline drawio](https://github.com/user-attachments/assets/51e2365e-6fff-4f42-91b8-5bd35ccd61a1)
 
-- 두왓의 데이터 양이 현재는 적기 때문에 로컬에서 스파크로 처리하고, 추후 데이터 규모가 많아질 경우를 대비해서 스파크 클러스터를 구축해 놓았음.
 
-
-
-
+- 2.
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
 
+- 3.
 ![image](https://github.com/user-attachments/assets/15ea07f8-c0c0-4b92-95b2-355b674bc189)
 
 ---
