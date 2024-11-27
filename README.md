@@ -61,6 +61,10 @@
 
 ![dowhat-pileline drawio](https://github.com/user-attachments/assets/51e2365e-6fff-4f42-91b8-5bd35ccd61a1)
 
+두왓의 데이터 양이 현재는 적기 때문에 로컬에서 스파크로 처리하고, 추후 데이터 규모가 많아질 경우를 대비해서 스파크 클러스터를 구축해 놓았음. 
+
+
+
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
 
 ![image](https://github.com/user-attachments/assets/15ea07f8-c0c0-4b92-95b2-355b674bc189)
