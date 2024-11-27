@@ -45,19 +45,19 @@
 ## 🔅 주요 기능 
 
 - **데이터 파이프라인 구축**
-   - 제공받은 Dowhat 데이터를 GCS에 적재
-   - 주 단위로 Airflow 배치 태스크를 통해 데이터를 인입하는 데이터 파이프라인 구현
-   - 현재는 로컬에서 Spark를 사용, 추후 데이터 규모가 많아질 경우를 대비해서 Spark cluster 구축해 둠
+   - 제공받은 Dowhat 데이터를 GCS에 적재.
+   - 주 단위로 Airflow 배치 태스크를 통해 데이터를 인입하는 데이터 파이프라인 구현.
+   - 현재는 로컬에서 Spark를 사용, 추후 데이터 규모가 많아질 경우를 대비해서 Spark cluster 구축해 둠.
 
 - **MLOps level 1 파이프라인 구축**
-   - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습
-   - mlflow를 통해 모델 실험 관리(Tracking), 모델 레지스트리 기능 사용
-   - FastAPI를 통해 모델 서빙 구현
-   - Github action, Nginx를 활용한 Blue-Green 무중단 배포 방식을 통해 CI/CD 구현
+   - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습.
+   - mlflow를 통해 모델 실험 관리(Tracking), 모델 레지스트리 기능 사용.
+   - FastAPI를 통해 모델 서빙 구현.
+   - Github action, Nginx를 활용한 Blue-Green 무중단 배포 방식을 통해 CI/CD 구현.
  
 - **모니터링 시스템 구축**
-   - Prometheus, Grafana를 통해 시스템 성능 모니터링 및 slack 알람 연동
-   - cAdvisor, prometheus Fastapi instrumentator를 통해 메트릭 정보 수집
+   - Prometheus, Grafana를 통해 시스템 성능 모니터링 및 slack 알람 연동.
+   - cAdvisor, prometheus Fastapi instrumentator를 통해 메트릭 정보 수집.
      
 
 ---
@@ -94,8 +94,8 @@
 
 
 - 데이터 파이프라인은 4개의 주요 계층으로 구성되어 있음.
-- 
-#### 1. **Storage Layer** (입력 저장소 계층)
+
+#### 1. Storage Layer (입력 저장소 계층)
 - 데이터 소스:
   - CSV 파일 업로드를 통해 데이터를 입력받음.
   - GCS(Google Cloud Storage)에 직접 데이터를 저장하거나, GCS에서 데이터 가져오는 것도 가능.
@@ -103,22 +103,55 @@
 
 
 #### 2. Processing Layer (데이터 처리 계층)
-- **Apache Spark**를 사용하여 3단계 데이터 처리 수행.
-  - **데이터 검증 (Data Validation)**: 데이터를 검증하고 품질을 확인.
-  - **변환 (Transformation)**: 호텔 도메인에 기반한 feature 생성 및 데이터 전처리.
-  - **포맷 변환 (Format Convert)**: 데이터를 효율적으로 저장 및 활용할 수 있도록 'Parquet' 포맷으로 변환.
+- Apache Spark를 사용하여 3단계 데이터 처리 수행.
+  - 데이터 검증 (Data Validation): 데이터를 검증하고 품질을 확인.
+  - 변환 (Transformation): 호텔 도메인에 기반한 feature 생성 및 데이터 전처리.
+  - 포맷 변환 (Format Convert): 데이터를 효율적으로 저장 및 활용할 수 있도록 'Parquet' 포맷으로 변환.
 
 
 #### 3. Storage Layer (출력 저장소 계층)
   - 최종 처리된 데이터를 feature store인 Cloud Storage Bucket에 저장.
-  - Feature Store인 feast를 사용하지 않은 이유는 인프라 구축 초기단계이기 때문에 최대한 간소화하기로 결정.  
+  - feast를 사용하지 않은 이유는 인프라 구축 초기 단계이기 때문에 최대한 간소화하기로 결정했기 때문임. 
+
 
 #### 4. Consumption Layer (소비 계층)
-  - 최종 데이터는 **데이터 사이언티스트**들이 Feature Store에서 데이터를 가져와 분석 및 모델 학습 등에 활용.
+  - 최종 데이터는 데이터 사이언티스트들이 Feature Store에서 데이터를 가져와 분석 및 모델 학습 등에 활용.
 
 
 ### **Mlops파이프라인 상세 구조**
 ![image](https://github.com/user-attachments/assets/15ea07f8-c0c0-4b92-95b2-355b674bc189)
 
----
+#### 1. 데이터 수집 및 로드
+- 원천 데이터는 Google Cloud Storage를 통해 수집 및 관리됨. 
 
+
+#### 2. 모델 학습 및 실험 관리
+- 수집된 데이터를 활용해 학습 데이터셋으로 변환.
+
+#### 3. Mlflow
+###### Tracking
+- 실험 기록 및 비교
+  - 모델 학습 시 학습 파라미터(학습률, 배치 크기 등), 평가 메트릭(정확도, 손실 등), 모델 아티팩트(학습된 모델 파일)를 관리. 
+
+- 실험 재현성 보장
+  - MLflow Tracking을 통해 과거 실험의 상세 정보(코드, 데이터, 환경)를 손쉽게 복원하여 동일한 결과를 재현할 수 있음.
+
+###### Model Registry
+- 모델 버전 관리: 
+  학습된 모델은 Model Registry에 저장되며, 각 모델은 고유한 버전으로 관리.  
+  이를 통해 이전 모델로 롤백하거나 다양한 모델을 비교할 수 있음.
+  
+- 모델 상태 관리:  
+  모델의 상태를 `Staging`, `Production`, `Archived`로 설정하여 배포 단계 및 사용 여부를 명확히 함. 
+  - Staging: 테스트 중인 모델.
+  - Production: 실제 서비스 중인 모델.
+  - Archived: 더 이상 사용되지 않는 모델.
+
+#### 4. CI/CD 파이프라인
+- Blue-Green Deployment를 사용하여 새로운 모델 배포 시 안정성 확보. 
+  - Blue App: 기존 모델 서비스
+  - Green App: 새로 배포된 모델 서비스
+
+
+
+---
