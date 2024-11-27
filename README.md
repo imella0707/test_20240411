@@ -93,10 +93,10 @@
 
 
 
-1. Storage Layer (입력 저장소 계층)
-  - 데이터 소스:
-  - CSV 파일 업로드를 통해 데이터를 입력받음.
-  - GCS(Google Cloud Storage)에서 직접 데이터를 저장하거나 가져오는 것도 가능.
+  - 1. Storage Layer (입력 저장소 계층)
+    - 데이터 소스:
+    - CSV 파일 업로드를 통해 데이터를 입력받음.
+    - GCS(Google Cloud Storage)에서 직접 데이터를 저장하거나 가져오는 것도 가능.
 
 #### 역할:
 - 원시 데이터를 **Cloud Storage Bucket**에 저장.
