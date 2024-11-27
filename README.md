@@ -49,7 +49,7 @@
    - 주 단위로 Airflow 배치 태스크를 통해 데이터를 인입하는 데이터 파이프라인 구현.
    - 현재는 로컬에서 Spark를 사용, 추후 데이터 규모가 많아질 경우를 대비해서 Spark cluster 구축해 둠.
 
-- **MLOps level 1 파이프라인 구축**
+- **MLOps 파이프라인 구축**
    - 제공받은 Dowhat 데이터를 전처리하여 간단한 추천 모델 학습.
    - mlflow를 통해 모델 실험 관리(Tracking), 모델 레지스트리 기능 사용.
    - FastAPI를 통해 모델 서빙 구현.
@@ -149,9 +149,13 @@
 
 #### 4. CI/CD: GitHub Actions와 NGINX를 활용한 무중단 배포
 - Github action
-  - MLflow에서 관리된 모델을 프로덕션 환경에 자동으로 배포.
-
-- Blue-Green Deployment를 사용하여 새로운 모델 배포 시 안정성 확보. 
+  - 새로운 모델 베포 이후 Backend 서버(FastAPI)의 코드 변경을 감지 → backend/** 디렉터리에서 변경이 발생하면 detect-changes 작업에서 확인 가능
+  - 업데이트 된 코드를 바탕으로
+    - Blue-Green 배포 스크립트(switch-blue-green.sh)를 실행.
+    - 변경 사항을 Green 컨테이너에 반영. 
+    
+- Blue-Green Deployment
+  - 무중단 배포를 할 수 있어서 새로운 모델 배포 시 안정성 확보. 
   - Blue App: 기존 모델 서비스
   - Green App: 새로 배포된 모델 서비스
 
