@@ -58,7 +58,23 @@
      
 
 ---
+## 개발 환경 
 
+- GCP 인스턴스 사용
+  - 리전: 서울 (asia-northeast3-a) 
+  - Image : Ubuntu 24.04.1 LTS(x86/64) 단, MLFlow 등 모델 학습 인스턴스는 Deep Learning VM with CUDA 12.3 M125
+  - Instance Type :  E2.standard-4 (vcpu 4, ram 16gb)
+  - Storage : 최소 100GB (균형 있는 영구 디스크)
+
+- GCP 인스턴스 생성 규칙
+  - 각 인스턴스 하나에 하나의 서비스 만을 띄워야 함. 
+    다만 **Prometheus, Grafana**같이 부하가 별로 없는 서비스의 경우 같은 인스턴스에 배포하여도 상관없음.
+  - 인스턴스 이름은 **dowhat-{platform}-{number}** 로 생성.
+    ex) dowhat-monitoring-1   
+
+
+
+---
 
 
 ## 아키텍처
