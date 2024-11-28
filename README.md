@@ -105,7 +105,7 @@
 #### 1) Storage Layer (입력 저장소 단계)
 - 데이터 소스:
   - CSV 파일 업로드를 통해 데이터를 입력받음.
-  - GCS(Google Cloud Storage)에 직접 데이터를 저장하거나, GCS에서 데이터 가져오는 것도 가능.
+  - GCS(Google Cloud Storage)에 직접 데이터를 저장. 
 
 
 
@@ -183,7 +183,7 @@
 - 대시보드에 차트와 그래프를 제작해서 시각화해서 데이터를 손쉽게 해석할 수 있어서 선택하게 되었음. 
 
 ### 모니터링 네트워크 설정
-- node exporter의 경우 서버를 모니터링 하는 것이기 때문에 다양한 메트릭을 수집할 수 없어서 아래와 같은 도구 사용 
+- node exporter의 경우 서버를 모니터링 하는 것이기 때문에 다양한 메트릭을 수집할 수 없어서 아래와 같은 도구 사용. 
   - Prometheus FastAPI Instrumentator: FastAPI 애플리케이션에서 메트릭을 자동으로 수집하기 위한 Python 라이브러리, 'http'이름으로 시작되는 메트릭들을 확인할 수 있음.
   - cAdvisor: Docker 컨테이너의 CPU, 메모리, 네트워크 사용량 등 다양한 메트릭을 수집, 'container'이름으로 시작되는 메트릭들을 확인할 수 있음.
 - Airflow, Mlflow, Fastapi, Monitoring 서버 모두 같은 네트워크로 연결.
