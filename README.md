@@ -82,7 +82,7 @@
 
 ## 🖊 아키텍처
 
-### **전체 아키텍처** 
+### **1. 전체 아키텍처** 
 ![image](https://github.com/user-attachments/assets/3dbbe9fb-90c4-4033-ab9b-769772fb8c1a)
 
 - Airflow의 역할
@@ -93,46 +93,46 @@
 ![image](https://github.com/user-attachments/assets/cae3ce0d-dcad-4582-a13d-e453f04da21b) <br>
 
 
-### **파이프라인 상세 구조**
+### **2.파이프라인 상세 구조**
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
 
 
 - 데이터 파이프라인은 4개의 주요 계층으로 구성되어 있음.<br>
 
-#### 1. Storage Layer (입력 저장소 계층)
+#### 1) Storage Layer (입력 저장소 계층)
 - 데이터 소스:
   - CSV 파일 업로드를 통해 데이터를 입력받음.
   - GCS(Google Cloud Storage)에 직접 데이터를 저장하거나, GCS에서 데이터 가져오는 것도 가능.
 
 
 
-#### 2. Processing Layer (데이터 처리 계층)
+#### 2) Processing Layer (데이터 처리 계층)
 - Apache Spark를 사용하여 3단계 데이터 처리 수행.
   - 데이터 검증 (Data Validation): 데이터를 검증하고 품질을 확인.
   - 변환 (Transformation): 호텔 도메인에 기반한 feature 생성 및 데이터 전처리.
   - 포맷 변환 (Format Convert): 데이터를 효율적으로 저장 및 활용할 수 있도록 'Parquet' 포맷으로 변환.
 
 
-#### 3. Storage Layer (출력 저장소 계층)
+#### 3) Storage Layer (출력 저장소 계층)
   - 최종 처리된 데이터를 feature store인 Cloud Storage Bucket에 저장.
   - feast를 사용하지 않은 이유는 인프라 구축 초기 단계이기 때문에 최대한 간소화하기로 결정했기 때문임. 
 
 
-#### 4. Consumption Layer (소비 계층)
+#### 4) Consumption Layer (소비 계층)
   - 최종 데이터는 데이터 사이언티스트들이 Feature Store에서 데이터를 가져와 분석 및 모델 학습 등에 활용.
 
 
-### **Mlops파이프라인 상세 구조**
+### **3.Mlops파이프라인 상세 구조**
 ![image](https://github.com/user-attachments/assets/15ea07f8-c0c0-4b92-95b2-355b674bc189)
 
-#### 1. 데이터 수집 및 로드
+#### 1) 데이터 수집 및 로드
 - 원천 데이터는 Google Cloud Storage를 통해 수집 및 관리됨. 
 
 
-#### 2. 모델 학습 및 실험 관리
+#### 2) 모델 학습 및 실험 관리
 - 수집된 데이터를 활용해 학습 데이터셋으로 변환.
 
-#### 3. Mlflow
+#### 3) Mlflow
 - Dockerfile을 만들어서 MLflow 서버를 컨테이너 환경에서 실행.
 - Google Cloud Storage와 PostgreSQL과 같은 외부 리소스를 활용한 실험 및 모델 관리가 가능하도록 설정.
 - mlflow의 기능으로 2가지가 있음. 
@@ -152,7 +152,7 @@
 
    
 
-#### 4. CI/CD: GitHub Actions와 NGINX를 활용한 배포
+#### 4) CI/CD: GitHub Actions와 NGINX를 활용한 배포
 - Github action
   - 새로운 모델 배포 이후 Backend 서버(FastAPI)에서 변경된 내역 확인.(backend/** 디렉터리에서 변경이 발생하면 detect-changes 작업에서 확인 가능)
   - 업데이트 된 코드를 바탕으로
