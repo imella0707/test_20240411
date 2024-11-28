@@ -129,8 +129,8 @@
 - 수집된 데이터를 활용해 학습 데이터셋으로 변환.
 
 #### 3. Mlflow
-- Dockerfile을 만들어서 MLflow 서버를 컨테이너 환경에서 실행
-- Google Cloud Storage와 PostgreSQL과 같은 외부 리소스를 활용한 실험 및 모델 관리가 가능하도록 설정
+- Dockerfile을 만들어서 MLflow 서버를 컨테이너 환경에서 실행.
+- Google Cloud Storage와 PostgreSQL과 같은 외부 리소스를 활용한 실험 및 모델 관리가 가능하도록 설정.
 - mlflow의 기능으로 2가지가 있음. 
   - Tracking
     - 실험 기록 및 비교: 모델 학습 시 학습 파라미터(학습률, 배치 크기 등), 평가 메트릭(정확도, 손실 등), 모델 아티팩트(학습된 모델 파일)를 관리. 
@@ -150,7 +150,7 @@
 
 #### 4. CI/CD: GitHub Actions와 NGINX를 활용한 배포
 - Github action
-  - 새로운 모델 배포 이후 Backend 서버(FastAPI)에서 변경된 내역 확인(backend/** 디렉터리에서 변경이 발생하면 detect-changes 작업에서 확인 가능)
+  - 새로운 모델 배포 이후 Backend 서버(FastAPI)에서 변경된 내역 확인.(backend/** 디렉터리에서 변경이 발생하면 detect-changes 작업에서 확인 가능)
   - 업데이트 된 코드를 바탕으로
     - Blue-Green 배포 스크립트(switch-blue-green.sh)를 실행.
     - 변경 사항을 Green 컨테이너에 반영. 
@@ -177,7 +177,7 @@
 - node exporter의 경우 서버를 모니터링 하는 것이기 때문에 다양한 메트릭을 수집할 수 없어서 아래와 같은 도구 사용 
   - Prometheus FastAPI Instrumentator: FastAPI 애플리케이션에서 메트릭을 자동으로 수집하기 위한 Python 라이브러리, 'http'이름으로 시작되는 메트릭들을 확인할 수 있음.
   - cAdvisor: Docker 컨테이너의 CPU, 메모리, 네트워크 사용량 등 다양한 메트릭을 수집, 'container'이름으로 시작되는 메트릭들을 확인할 수 있음.
-- Airflow, Mlflow, Fastapi, Monitoring 서버 모두 같은 네트워크로 연결
+- Airflow, Mlflow, Fastapi, Monitoring 서버 모두 같은 네트워크로 연결.
 
 ![image](https://github.com/user-attachments/assets/add0bc53-bc5e-4800-893c-af0355a0dc53)
   
