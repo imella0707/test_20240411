@@ -89,7 +89,8 @@
   - GCS에서 CSV 파일 검색 및 관리: GCSHook을 사용해 Google Cloud Storage 버킷에서 CSV 파일 리스트를 추출
   - Spark 작업 실행, GCS에 결과 저장
   - 임시 키 파일 생성 및 보안 관리: Airflow는 Google Cloud 서비스 계정 키를 임시 파일로 생성하여 보안성을 강화
-  - Spark 작업 트리거: Spark 작업은 CSV 파일을 읽고 데이터를 전처리하여 Parquet 형식으로 변환
+  - Spark 작업 트리거: Spark 작업은 CSV 파일을 읽고 데이터를 전처리하여 Parquet 형식으로 변환<br>
+  
 ![image](https://github.com/user-attachments/assets/cae3ce0d-dcad-4582-a13d-e453f04da21b) <br>
 
 
