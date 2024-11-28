@@ -92,6 +92,7 @@
 ### **파이프라인 상세 구조**
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
 
+![image](https://github.com/user-attachments/assets/5466e78a-7d57-4035-893a-8366d0e6a92c)
 
 - 데이터 파이프라인은 4개의 주요 계층으로 구성되어 있음.
 
