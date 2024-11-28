@@ -129,7 +129,8 @@
 - 수집된 데이터를 활용해 학습 데이터셋으로 변환.
 
 #### 3. Mlflow
-- Dockerfile을 만들어서 MLflow 서버를 컨테이너 환경에서 실행, Google Cloud Storage와 PostgreSQL과 같은 외부 리소스를 활용한 실험 및 모델 관리가 가능하도록 설정
+- Dockerfile을 만들어서 MLflow 서버를 컨테이너 환경에서 실행
+- Google Cloud Storage와 PostgreSQL과 같은 외부 리소스를 활용한 실험 및 모델 관리가 가능하도록 설정
 - mlflow의 기능으로 2가지가 있음. 
   - Tracking
     - 실험 기록 및 비교: 모델 학습 시 학습 파라미터(학습률, 배치 크기 등), 평가 메트릭(정확도, 손실 등), 모델 아티팩트(학습된 모델 파일)를 관리. 
