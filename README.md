@@ -157,9 +157,27 @@
     
 - Blue-Green Deployment
   - 무중단 배포를 할 수 있어서 새로운 모델 배포 시 안정성 확보. 
-  - Blue App: 기존 모델 서비스
-  - Green App: 새로 배포된 모델 서비스
+  - Blue App: 기존 모델 서비스.
+  - Green App: 새로 배포된 모델 서비스.
 
 
 
 ---
+## 🔔 모니터링
+![image](https://github.com/user-attachments/assets/99c324b5-a783-4f89-9fd8-6b642801bc8e)
+
+### 프로메테우스
+- 데이터 수집 방식: pull 방식 선택, 모니터링 대상 각각의 서버마다 설치하지 않고 monitoring 서버에만 prometheus설치함. 
+- Logstash나 Telegraf같은 Pushing 방식보다 모니터링 서버에 영향이 가는 장애가 적은 편이어서 모니터링 도구로 선택하게 되었음. 
+
+### 그라파나
+- 대시보드에 차트와 그래프를 제작해서 시각화해서 데이터를 손쉽게 해석할 수 있어서 선택하게 되었음. 
+
+### 모니터링 네트워크 설정
+- node exporter의 경우 서버를 모니터링 하는 것이기 때문에 다양한 메트릭을 수집할 수 없어서 아래와 같은 도구 사용 
+  - Prometheus FastAPI Instrumentator: FastAPI 애플리케이션에서 메트릭을 자동으로 수집하기 위한 Python 라이브러리, 'http'이름으로 시작되는 메트릭들을 확인할 수 있음.
+  - cAdvisor: Docker 컨테이너의 CPU, 메모리, 네트워크 사용량 등 다양한 메트릭을 수집, 'container'이름으로 시작되는 메트릭들을 확인할 수 있음.
+- Airflow, Mlflow, Fastapi, Monitoring 서버 모두 같은 네트워크로 연결
+- 
+
+
