@@ -178,6 +178,6 @@
   - Prometheus FastAPI Instrumentator: FastAPI 애플리케이션에서 메트릭을 자동으로 수집하기 위한 Python 라이브러리, 'http'이름으로 시작되는 메트릭들을 확인할 수 있음.
   - cAdvisor: Docker 컨테이너의 CPU, 메모리, 네트워크 사용량 등 다양한 메트릭을 수집, 'container'이름으로 시작되는 메트릭들을 확인할 수 있음.
 - Airflow, Mlflow, Fastapi, Monitoring 서버 모두 같은 네트워크로 연결
-- 
+  
 
 
