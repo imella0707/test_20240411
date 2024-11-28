@@ -92,7 +92,6 @@
 ### **파이프라인 상세 구조**
 ![image](https://github.com/user-attachments/assets/8da81757-4720-4548-bd5f-f1b66901de49)
 
-![image](https://github.com/user-attachments/assets/5466e78a-7d57-4035-893a-8366d0e6a92c)
 
 - 데이터 파이프라인은 4개의 주요 계층으로 구성되어 있음.
 
@@ -157,9 +156,12 @@
     - 변경 사항을 Green 컨테이너에 반영. 
     
 - Blue-Green Deployment
-  - nginx의 reverse proxy를 통해 새 버전으로 트래픽을 전환하는 방식이라 무중단 배포가 가능, 새로운 모델 배포 시 안정성 확보. 
-  - Blue App: 기존 모델 서비스.
-  - Green App: 새로 배포된 모델 서비스.
+![image](https://github.com/user-attachments/assets/86d9a467-ea5b-4591-b4a7-37e74e3ec93a)
+
+  - nginx의 reverse proxy를 통해 새 버전으로 트래픽을 전환하는 방식이라 무중단 배포가 가능
+  - 새로운 모델 배포 시 문제가 생기면 트래픽을 구버전으로 신속히 롤백할 수 있어 높은 안정성 확보 가능.  
+    - Blue App: 기존 모델 서비스.
+    - Green App: 새로 배포된 모델 서비스.
 
 
 
